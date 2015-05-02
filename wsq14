@@ -1,0 +1,44 @@
+//This program calculates the mathematical e constant with the presition provided by the user (number of decimals)
+// Accumulate the sum of 1 divided by the factorial number from 0 till the number of decimals given by the user
+#include <iostream>
+using namespace std;
+
+
+
+int fact(int x){
+	if (x==0) 
+		{
+		return 1;
+		}
+	else
+		{
+			x= x*fact(x-1);
+		}
+
+}
+double calculate_e(){
+
+	int parameter;
+	double e, acumulador=0;
+
+	cout<<"Ingresa la presicion (numero de decimales) que tendra la constante: ";
+
+	cin>> (parameter);
+
+	for(int i=0;i<=parameter;i++)
+	{
+		e=1.0/fact(i);
+
+		acumulador = acumulador + e;
+
+	}
+
+	cout<< " El valor de la constante e es: " << acumulador;
+}
+
+int main(){
+	calculate_e();	
+
+	return 0;	
+
+}
